@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#070B12">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@id/bottomArea">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KHAN PROXY"
+        android:textColor="#00E5FF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:shadowColor="#00E5FF"
+        android:shadowRadius="20" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FREE FIRE TOKEN INTERCEPTOR"
+        android:textColor="#8E9AAF"
+        android:textSize="10sp"
+        android:letterSpacing="0.2" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="● STOPPED"
+        android:textColor="#FFC107"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#101925"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SELECT REGION"
+            android:textColor="#00E5FF"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerRegion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="#141F2C" />
+
+        <TextView
+            android:id="@+id/tvRegionInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="https://clientbp.ggpolarbear.com/"
+            android:textColor="#8E9AAF"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#101925"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SELECT MODE"
+            android:textColor="#00E5FF"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rgMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbJwt"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="JWT"
+                android:textColor="#F5F7FA" />
+
+            <RadioButton
+                android:id="@+id/rbAccess"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="ACCESS"
+                android:textColor="#F5F7FA" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#101925"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="TOKENS CAPTURED"
+            android:textColor="#8E9AAF"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tvTokenCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="#00E676"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:shadowColor="#00E676"
+            android:shadowRadius="12" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnWriteConfig"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="📝 WRITE localconfig.json"
+        android:backgroundTint="#9C4DFF"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="CAPTURED TOKENS"
+        android:textColor="#00E5FF"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTokens"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_marginTop="8dp"
+        android:background="#101925" />
+</LinearLayout>
+</ScrollView>
+
+<!-- BOTTOM FIXED BUTTONS -->
+<LinearLayout
+    android:id="@+id/bottomArea"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="#0A0E17"
+    android:elevation="16dp"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="▶ START"
+            android:backgroundTint="#00E676"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:layout_height="wrap_content"
+            android:text="■ STOP"
+            android:backgroundTint="#FF3045"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnOverlay"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="OVERLAY"
+            android:backgroundTint="#00E5FF"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:layout_height="wrap_content"
+            android:text="CLEAR"
+            android:backgroundTint="#FFC107"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="11sp" />
+    </LinearLayout>
+</LinearLayout>
+</RelativeLayout>
